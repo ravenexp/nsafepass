@@ -11,3 +11,10 @@ nsafepass_test_SOURCES = $(nsafepass_SOURCES)
 nsafepass_test_CPPFLAGS = -DTEST
 
 TESTS = $(check_PROGRAMS)
+
+# Enable the most paranoid gcc warnings
+AM_CFLAGS = -Wall -Wextra -Wpedantic -Wc++-compat \
+ -Wshadow -Wcast-align -Wcast-qual -Wwrite-strings \
+ -Wlogical-op -Wconversion -Wstrict-prototypes -Wmissing-prototypes \
+ -Wformat=2 -Wuninitialized -Wstrict-overflow=4 \
+ -Waggregate-return -Wdisabled-optimization
