@@ -11,6 +11,7 @@
 #include <config.h>
 
 #include "common.h"
+#include "random.h"
 #include "encrypt.h"
 
 #ifdef MAIN_TEST

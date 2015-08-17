@@ -58,6 +58,16 @@ struct nsa_ciphertext_block
 	union nsa_uint128_t v;
 };
 
+/** \brief nsafepass random number data type
+ *
+ *  Random numbers have their own disjoint data type.
+ */
+struct nsa_random_number
+{
+	/** 128-bit value */
+	union nsa_uint128_t v;
+};
+
 
 /* Function declaration section */
 

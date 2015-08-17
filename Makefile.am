@@ -6,12 +6,18 @@ AM_CFLAGS = -std=c99
 nsafepass_SOURCES = \
 src/common.h \
 src/encrypt.h \
+src/random.h \
 src/nsafepass.c \
-src/encrypt-xor.c
+src/encrypt-xor.c \
+src/random-xkcd.c
 
 dist_doc_DATA = README.md
 
-check_PROGRAMS = nsafepass.test encrypt-xor.test
+check_PROGRAMS = \
+nsafepass.test \
+encrypt-xor.test \
+random-xkcd.test
+
 TESTS = $(check_PROGRAMS)
 
 nsafepass_test_SOURCES = $(nsafepass_SOURCES)
@@ -19,6 +25,9 @@ nsafepass_test_CPPFLAGS = -DMAIN_TEST
 
 encrypt_xor_test_SOURCES = src/encrypt-xor.c
 encrypt_xor_test_CPPFLAGS = -DTEST
+
+random_xkcd_test_SOURCES = src/random-xkcd.c
+random_xkcd_test_CPPFLAGS = -DTEST
 
 # Enable the most paranoid gcc warnings
 AM_CFLAGS += -Wall -Wextra -Wpedantic -Wc++-compat \
