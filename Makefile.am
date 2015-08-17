@@ -19,4 +19,4 @@ AM_CFLAGS = -Wall -Wextra -Wpedantic -Wc++-compat \
  -Wshadow -Wcast-align -Wcast-qual -Wwrite-strings \
  -Wlogical-op -Wconversion -Wstrict-prototypes -Wmissing-prototypes \
  -Wformat=2 -Wuninitialized -Wstrict-overflow=4 \
- -Waggregate-return -Wdisabled-optimization
+ -Wdisabled-optimization

@@ -12,6 +12,10 @@
  *  Contains common constant, data type and function declarations.
  */
 
+
+/* Data type declaration section */
+
+
 /** \brief nsafepass 128-bit integer data type
  *
  *  Used for representing cipher keys, plaintext and ciphertext blocks, etc.
@@ -53,3 +57,40 @@ struct nsa_ciphertext_block
 	/** 128-bit value */
 	union nsa_uint128_t v;
 };
+
+
+/* Function declaration section */
+
+
+/** \brief Compare 128-bit numbers
+ *  \param a
+ *    Comparison argument 1
+ *  \param b
+ *    Comparison argument 2
+ *  \returns
+ *    0 if the arguments are equal and 1 otherwise
+ */
+static inline int
+nsa_uint128_compare(union nsa_uint128_t a, union nsa_uint128_t b)
+{
+	return (a.u64[0] != b.u64[0]) || (a.u64[1] != b.u64[1]);
+}
+
+/** \brief XOR 128-bit numbers
+ *  \param a
+ *    XOR argument 1
+ *  \param b
+ *    XOR argument 2
+ *  \returns
+ *    a XOR b
+ */
+static inline union nsa_uint128_t
+nsa_uint128_xor(union nsa_uint128_t a, union nsa_uint128_t b)
+{
+	union nsa_uint128_t r;
+
+	r.u64[0] = a.u64[0] ^ b.u64[0];
+	r.u64[1] = a.u64[1] ^ b.u64[1];
+
+	return r;
+}
