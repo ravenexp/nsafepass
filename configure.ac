@@ -4,7 +4,6 @@ AC_CONFIG_SRCDIR([src/nsafepass.c])
 AM_INIT_AUTOMAKE([-Wall foreign subdir-objects])
 
 AC_PROG_CC
-AC_PROG_CC_C99
 
 AC_CHECK_PROGS([DOXYGEN], [doxygen])
 if test -z "$DOXYGEN";
