@@ -1,6 +1,8 @@
 bin_PROGRAMS = nsafepass
 
-nsafepass_SOURCES = src/nsafepass.c
+nsafepass_SOURCES = \
+src/common.h \
+src/nsafepass.c
 
 dist_doc_DATA = README.md
 

@@ -6,8 +6,11 @@
     the Free Software Foundation, either version 3 of the License, or
     (at your option) any later version. */
 
+#include <stdint.h>
 #include <stdio.h>
 #include <config.h>
+
+#include "common.h"
 
 #ifdef MAIN_TEST
 static int run_test(void);
