@@ -2,17 +2,20 @@ bin_PROGRAMS = nsafepass
 
 nsafepass_SOURCES = \
 src/common.h \
-src/nsafepass.c
+src/encrypt.h \
+src/nsafepass.c \
+src/encrypt-xor.c
 
 dist_doc_DATA = README.md
 
-# Dummy test suite
-check_PROGRAMS = nsafepass.test
+check_PROGRAMS = nsafepass.test encrypt-xor.test
+TESTS = $(check_PROGRAMS)
 
 nsafepass_test_SOURCES = $(nsafepass_SOURCES)
 nsafepass_test_CPPFLAGS = -DMAIN_TEST
 
-TESTS = $(check_PROGRAMS)
+encrypt_xor_test_SOURCES = src/encrypt-xor.c
+encrypt_xor_test_CPPFLAGS = -DTEST
 
 # Enable the most paranoid gcc warnings
 AM_CFLAGS = -Wall -Wextra -Wpedantic -Wc++-compat \
