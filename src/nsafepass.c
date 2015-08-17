@@ -9,9 +9,28 @@
 #include <stdio.h>
 #include <config.h>
 
+#ifdef MAIN_TEST
+static int run_test(void);
+#endif
+
 int main(void)
 {
+#ifdef MAIN_TEST
+	return run_test();
+#endif
+
 	puts("This is " PACKAGE_STRING);
 
 	return 0;
 }
+
+#ifdef MAIN_TEST
+
+static int run_test(void)
+{
+	puts("This is a " PACKAGE_STRING " test");
+
+	return 0;
+}
+
+#endif

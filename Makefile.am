@@ -8,7 +8,7 @@ dist_doc_DATA = README.md
 check_PROGRAMS = nsafepass.test
 
 nsafepass_test_SOURCES = $(nsafepass_SOURCES)
-nsafepass_test_CPPFLAGS = -DTEST
+nsafepass_test_CPPFLAGS = -DMAIN_TEST
 
 TESTS = $(check_PROGRAMS)
 
