@@ -23,3 +23,19 @@ AM_CFLAGS = -Wall -Wextra -Wpedantic -Wc++-compat \
  -Wlogical-op -Wconversion -Wstrict-prototypes -Wmissing-prototypes \
  -Wformat=2 -Wuninitialized -Wstrict-overflow=4 \
  -Wdisabled-optimization
+
+# Use Doxygen if available
+if HAVE_DOXYGEN
+
+doxygen/doxyfile.stamp:
+	cd doxygen ; $(DOXYGEN)
+	echo Timestamp > $@
+
+CLEANFILES = doxygen/doxyfile.stamp
+
+all-local: doxygen/doxyfile.stamp
+
+clean-local:
+	rm -rf doxygen/html
+
+endif

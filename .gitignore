@@ -22,3 +22,8 @@
 /build-aux
 /config*
 /stamp-h1
+
+# Doxygen
+doxygen/doxyfile.stamp
+doxygen/Doxyfile
+doxygen/html
